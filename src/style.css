@@ -4,29 +4,58 @@
 
 @import url("./fonts.css");
 
+/* .cover {
+	background: url("./assets/imgs/boyandgirl.jpg") #f2f0f1 714px -46.048px / 46.659%
+		152.049% no-repeat;
+	/* background:  #F2F0F1; */
+/* } */
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+	outline: none;
+}
+
 .cover {
-    background: url('./assets/imgs/boyandgirl.jpg') #F2F0F1 714px -46.048px / 46.659% 152.049% no-repeat;
-    /* background:  #F2F0F1; */
-}
-
-.cover img {
-    height: 50%;
-    object-position: 0 70%;
-}
-
-.cover-image {
-   height: 100%;
-    height: auto;
+	background: #f2f0f1;
 }
 
 
-
-@layer components {
-    .global-padding {
-        padding: 0 100px;
-    }
+.cover-image img {
+	width: 100%;
+	object-fit: cover; /* Ensure proper scaling */
+	/* object-position: 0 -100px; */
 }
 
-#style1.dress-style {
-    background: url("./assets/imgs/") lightgray 50% / cover no-repeat;
+@layer base {
+	footer {
+		background: linear-gradient(180deg, white 90px, #f0f0f0 90px);
+	}
+}
+
+/* #style1.dress-style {
+    background: url("./assets/imgs/casual.png") lightgray 50% / cover no-repeat;
+} */
+
+.reviewSection::-webkit-scrollbar {
+	display: none;
+}
+
+.dress-style img {
+	background-color: lightgray;
+	/* object-fit: cover; */
+	object-position: top;
+}
+
+section,
+footer {
+	padding: 0 100px;
+}
+
+@media screen and (max-width: 768px) {
+	section,
+	footer {
+		padding: 0 16px;
+	}
 }

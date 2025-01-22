@@ -4,12 +4,12 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="./../src/output.css" />
-		<link rel="stylesheet" href="./../src/style.css" />
+        <link rel="stylesheet" href="./../src/fonts.css">
 		<title>Document</title>
 	</head>
 	<body>
 		<header>
-			<div class="bg-black global-padding py-[10px] flex flex-row justify-between ">
+			<section class="bg-black py-[10px] flex flex-row justify-between">
 				<div class="invisible">
 					<img src="./../src/assets/imgs/exit.svg" alt="" />
 				</div>
@@ -18,209 +18,445 @@
 					Sign up and get 20% off to your first order.
 					<span class="underline font-medium text-white">Sign Up Now</span>
 				</p>
-				<div>
+				<div class="invisible lg:block">
 					<img src="./../src/assets/imgs/exit.svg" alt="" />
 				</div>
-			</div>
-			<div class="global-padding py-6 flex flex-row content-center gap-10 w-auto">
+			</section>
+			<section class="py-6 flex flex-row items-center justify-between gap-10 w-auto">
 				<h3 class="logo">SHOP.CO</h3>
-				<nav class="flex text-center">
-					<ul class="flex gap-6 text-nowrap">
-						<li class="flex flex-row gap-1 my-auto">
-							<a href="#">Shop</a>
-							<div class="w-4 h-4 m-auto">
-								<img class="" src="../src/assets/imgs/arrowDown.svg" alt="" />
-							</div>
-						</li>
-						<li class="my-auto"><a href="#">On Sale</a></li>
-						<li class="my-auto"><a href="#">New Arrivals</a></li>
-						<li class="my-auto"><a href="#">Brands</a></li>
-					</ul>
-				</nav>
-				<div class="bg-searchGray flex flex-row gap-3 p-4 rounded-3xl w-full">
-					<div>
-						<img src="./../src/assets/imgs/search.svg" alt="" />
+				<div class="hidden lg:flex flex-row items-center gap-10 w-full">
+					<nav class="flex text-center">
+						<ul class="flex gap-6 text-nowrap">
+							<li class="flex flex-row gap-1 my-auto">
+								<a href="#">Shop</a>
+								<div class="w-4 h-4 m-auto">
+									<img class="" src="../src/assets/imgs/arrowDown.svg" alt="" />
+								</div>
+							</li>
+							<li class="my-auto"><a href="#">On Sale</a></li>
+							<li class="my-auto"><a href="#">New Arrivals</a></li>
+							<li class="my-auto"><a href="#">Brands</a></li>
+						</ul>
+					</nav>
+					<div class="bg-lightGray flex flex-row gap-3 p-4 rounded-3xl w-full">
+						<div>
+							<img src="./../src/assets/imgs/search.svg" alt="" />
+						</div>
+						<input
+							class="bg-lightGray w-full"
+							type="text"
+							placeholder="Search for products..." />
 					</div>
-					<input
-						class="bg-searchGray w-full"
-						type="text"
-						placeholder="Search for products..." />
-				</div>
-				<div class="flex flex-row gap-[14px] flex-shrink-0 items-center">
-					<img src="../src/assets/imgs/cart.svg" alt="" class="w-6 h-6" />
+					<div class="flex flex-row gap-[14px] flex-shrink-0 items-center">
+						<img src="../src/assets/imgs/cart.svg" alt="" class="w-6 h-6" />
 
-					<img
-						src="../src/assets/imgs/profile.svg"
-						alt=""
-						class="w-6 h-6 flex-shrink-0" />
+						<img
+							src="../src/assets/imgs/profile.svg"
+							alt=""
+							class="w-6 h-6 flex-shrink-0" />
+					</div>
 				</div>
-			</div>
+                <div class="lg:hidden">
+                    <img src="../src/assets/imgs/burger.svg" alt="">
+                </div>
+			</section>
 		</header>
 		<main class="flex flex-col">
-			<section class="cover flex flex-row justify-start pl-[100px] py-[100px]">
-				<div class="flex flex-col  items-start">
-					<h1>FIND CLOTHES <br> THAT MATCHES <br>YOUR STYLE</h1>
-					<p class="small-info mt-[30px]">
+			<div class="cover flex flex-col md:flex-row justify-start pt-10 md:pl-[100px] md:pt-[44px] pr-0  ">
+				<div class="flex flex-col items-start md:w-1/2 md:mb-[116px] mt-[55px] px-4">
+					<h1>
+						FIND CLOTHES <br />
+						THAT MATCHES <br />YOUR STYLE
+					</h1>
+					<p class="mt-[30px]">
 						Browse through our diverse range of meticulously crafted garments,
-						designed <br>to bring out your individuality and cater to your sense of
-						style.
+						designedto bring out your individuality and cater to your
+						sense of style.
 					</p>
-					<button class="py-4 px-[54px] bg-black text-white rounded-full font-medium text-base mt-8">Shop Now</button>
-					<div class="mt-12 flex flex-row gap-8">
+					<button
+						class="py-4 px-[54px] bg-black text-white self-center md:self-start rounded-full font-medium text-base mt-8 w-full max-w-[358px] md:w-auto ">
+						Shop Now
+					</button>
+					<div class="mt-12 flex flex-row gap-x-8 gap-y-[14px] flex-wrap w-full justify-center">
 						<div>
-							<h3 class="text-[40px] font-bold">200+</h3>
-							<p class="text-black/60 leading-[22px] translate-y-[-2px]">International Brands</p>
+							<h3 class="">200+</h3>
+							<p class="leading-[22px] translate-y-[-2px] small-info ">
+								International Brands
+							</p>
 						</div>
-                        <div class="w-[1px] h-auto bg-black/10"></div>
-                        <div>
-                            <h3 class="text-[40px] font-bold">2,000+</h3>
-                            <p class="text-black/60 leading-[22px] translate-y-[-2px]">High-Quality Products</p>
-                        </div>
-                        <div class="w-[1px] h-auto bg-black/10"></div>
-                        <div>
-                            <h3 class="text-[40px] font-bold">30,000+</h3>
-                            <p class="text-black/60 leading-[22px] translate-y-[-2px]">Happy Customers</p>
-                        </div>
+						<div class="w-[1px] h-auto bg-black/10"></div>
+						<div>
+							<h3 class="">2,000+</h3>
+							<p class="leading-[22px] translate-y-[-2px] small-info ">
+								High-Quality Products
+							</p>
+						</div>
+						<div class="w-[1px] h-auto bg-black/10 hidden md:block"></div>
+						<div class="basis-full md:basis-auto flex flex-col md:items-start items-center">
+							<h3 class="">30,000+</h3>
+							<p class="leading-[22px] translate-y-[-2px] small-info">
+								Happy Customers
+							</p>
+						</div>
 					</div>
 				</div>
-                <!-- <div class="cover-image">
+				<div class="cover-image md:w-5/12 flex items-end overflow-hidden">
                     <img class="" src="../src/assets/imgs/boyandgirl.jpg" alt="">
-                </div> -->
-			</section>
-			<section class="global-padding bg-black flex flex-row justify-between items-center h-[122px]">
-				<img class="self-start" src="/src/assets/imgs/versace.svg" alt="" />
+                </div>
+			</div>
+			<section
+				class="bg-black flex flex-row py-[39px] md:py-0 justify-center md:justify-between gap-x-8 gap-y-5 flex-wrap items-center md:h-[122px]">
+				<img class="md:self-start" src="/src/assets/imgs/versace.svg" alt="" />
 				<img src="../src/assets/imgs/zara.svg" alt="" />
 				<img src="../src/assets/imgs/gucci.svg" alt="" />
 				<img src="../src/assets/imgs/prada.svg" alt="" />
-				<img class="self-start" src="../src/assets/imgs/calvinklein.svg" alt="" />
+				<img
+					class="md:self-start"
+					src="../src/assets/imgs/calvinklein.svg"
+					alt="" />
 			</section>
 		</main>
-		<section class="global-padding flex flex-col pt-[68px]">
+		<section class="flex flex-col pt-[68px]">
 			<h2>NEW ARRIVALS</h2>
-			<div class="mt-[51px] flex flex-row flex-wrap gap-x-[20px] gap-y-[100px] justify-center">
+			<div
+				class="mt-[51px] flex flex-row flex-wrap gap-x-[20px] gap-y-[100px] justify-center">
 				<div class="w-[296px]">
-                    <div class="h-[298px] w-[296px] bg-[#F0EEED] rounded-[20px]">
-					    <img src="../src/assets/imgs/test.png" alt="" class="w-full h-full object-cover rounded-[20px]"/>
-                    </div>
-					<div class=" mt-4 flex flex-col gap-2">
-						<p class="font-bold ">T-shirt with Tape Details</p>
+					<div class="h-[298px] w-[296px] bg-creamyGray rounded-default">
+						<img
+							src="../src/assets/imgs/test.png"
+							alt=""
+							class="w-full h-full object-cover rounded-default" />
+					</div>
+					<div class="mt-4 flex flex-col gap-2">
+						<p class="font-bold">T-shirt with Tape Details</p>
 						<div class="flex flex-row gap-[11px] items-center">
 							<div class="flex flex-row gap-[5px] h-[18px]">
-                                <img src="../src/assets/imgs/fullstar.svg" alt="">
-                                <img src="../src/assets/imgs/fullstar.svg" alt="">
-                                <img src="../src/assets/imgs/fullstar.svg" alt="">
-                                <img src="../src/assets/imgs/fullstar.svg" alt="">
-                                <img src="../src/assets/imgs/halfstar.svg" alt="">
-                            </div>
+								<img src="../src/assets/imgs/fullstar.svg" alt="" />
+								<img src="../src/assets/imgs/fullstar.svg" alt="" />
+								<img src="../src/assets/imgs/fullstar.svg" alt="" />
+								<img src="../src/assets/imgs/fullstar.svg" alt="" />
+								<img src="../src/assets/imgs/halfstar.svg" alt="" />
+							</div>
 							<p class="text-sm">4.5/5</p>
 						</div>
 						<p class="font-bold text-2xl">$120</p>
 					</div>
 				</div>
-                <div class="w-[296px]">
-                    <div class="h-[298px] w-[296px] bg-[#F0EEED] rounded-[20px]">
-                        <img src="../src/assets/imgs/test.png" alt="" class="w-full h-full object-cover rounded-[20px]" />
-                    </div>
-                    <div class=" mt-4 flex flex-col gap-2">
-                        <p class="font-bold ">T-shirt with Tape Details</p>
-                        <div class="flex flex-row gap-[11px] items-center">
-                            <div class="flex flex-row gap-[5px] h-[18px]">
-                                <img src="../src/assets/imgs/fullstar.svg" alt="">
-                                <img src="../src/assets/imgs/fullstar.svg" alt="">
-                                <img src="../src/assets/imgs/fullstar.svg" alt="">
-                                <img src="../src/assets/imgs/fullstar.svg" alt="">
-                                <img src="../src/assets/imgs/halfstar.svg" alt="">
-                            </div>
-                            <p class="text-sm">4.5/5</p>
-                        </div>
-                        <p class="font-bold text-2xl">$120</p>
-                    </div>
-                </div>
-                <div class="w-[296px]">
-                    <div class="h-[298px] w-[296px] bg-[#F0EEED] rounded-[20px]">
-                        <img src="../src/assets/imgs/test.png" alt="" class="w-full h-full object-cover rounded-[20px]" />
-                    </div>
-                    <div class=" mt-4 flex flex-col gap-2">
-                        <p class="font-bold ">T-shirt with Tape Details</p>
-                        <div class="flex flex-row gap-[11px] items-center">
-                            <div class="flex flex-row gap-[5px] h-[18px]">
-                                <img src="../src/assets/imgs/fullstar.svg" alt="">
-                                <img src="../src/assets/imgs/fullstar.svg" alt="">
-                                <img src="../src/assets/imgs/fullstar.svg" alt="">
-                                <img src="../src/assets/imgs/fullstar.svg" alt="">
-                                <img src="../src/assets/imgs/halfstar.svg" alt="">
-                            </div>
-                            <p class="text-sm">4.5/5</p>
-                        </div>
-                        <p class="font-bold text-2xl">$120</p>
-                    </div>
-                </div>
-                <div class="w-[296px]">
-                    <div class="h-[298px] w-[296px] bg-[#F0EEED] rounded-[20px]">
-                        <img src="../src/assets/imgs/test.png" alt="" class="w-full h-full object-cover rounded-[20px]" />
-                    </div>
-                    <div class=" mt-4 flex flex-col gap-2">
-                        <p class="font-bold ">T-shirt with Tape Details</p>
-                        <div class="flex flex-row gap-[11px] items-center">
-                            <div class="flex flex-row gap-[5px] h-[18px]">
-                                <img src="../src/assets/imgs/fullstar.svg" alt="">
-                                <img src="../src/assets/imgs/fullstar.svg" alt="">
-                                <img src="../src/assets/imgs/fullstar.svg" alt="">
-                                <img src="../src/assets/imgs/fullstar.svg" alt="">
-                                <img src="../src/assets/imgs/halfstar.svg" alt="">
-                            </div>
-                            <p class="text-sm">4.5/5</p>
-                        </div>
-                        <p class="font-bold text-2xl">$120</p>
-                    </div>
-                </div>
-                <div class="w-[296px]">
-                    <div class="h-[298px] w-[296px] bg-[#F0EEED] rounded-[20px]">
-                        <img src="../src/assets/imgs/test.png" alt="" class="w-full h-full object-cover rounded-[20px]" />
-                    </div>
-                    <div class=" mt-4 flex flex-col gap-2">
-                        <p class="font-bold ">T-shirt with Tape Details</p>
-                        <div class="flex flex-row gap-[11px] items-center">
-                            <div class="flex flex-row gap-[5px] h-[18px]">
-                                <img src="../src/assets/imgs/fullstar.svg" alt="">
-                                <img src="../src/assets/imgs/fullstar.svg" alt="">
-                                <img src="../src/assets/imgs/fullstar.svg" alt="">
-                                <img src="../src/assets/imgs/fullstar.svg" alt="">
-                                <img src="../src/assets/imgs/halfstar.svg" alt="">
-                            </div>
-                            <p class="text-sm">4.5/5</p>
-                        </div>
-                        <p class="font-bold text-2xl">$120</p>
-                    </div>
-                </div>
-                <div class="w-[296px]">
-                    <div class="h-[298px] w-[296px] bg-[#F0EEED] rounded-[20px]">
-                        <img src="../src/assets/imgs/test.png" alt="" class="w-full h-full object-cover rounded-[20px]" />
-                    </div>
-                    <div class=" mt-4 flex flex-col gap-2">
-                        <p class="font-bold ">T-shirt with Tape Details</p>
-                        <div class="flex flex-row gap-[11px] items-center">
-                            <div class="flex flex-row gap-[5px] h-[18px]">
-                                <img src="../src/assets/imgs/fullstar.svg" alt="">
-                                <img src="../src/assets/imgs/fullstar.svg" alt="">
-                                <img src="../src/assets/imgs/fullstar.svg" alt="">
-                                <img src="../src/assets/imgs/fullstar.svg" alt="">
-                                <img src="../src/assets/imgs/halfstar.svg" alt="">
-                            </div>
-                            <p class="text-sm">4.5/5</p>
-                        </div>
-                        <p class="font-bold text-2xl">$120</p>
-                    </div>
-                </div>
+				<div class="w-[296px]">
+					<div class="h-[298px] w-[296px] bg-creamyGray rounded-default">
+						<img
+							src="../src/assets/imgs/test.png"
+							alt=""
+							class="w-full h-full object-cover rounded-default" />
+					</div>
+					<div class="mt-4 flex flex-col gap-2">
+						<p class="font-bold">T-shirt with Tape Details</p>
+						<div class="flex flex-row gap-[11px] items-center">
+							<div class="flex flex-row gap-[5px] h-[18px]">
+								<img src="../src/assets/imgs/fullstar.svg" alt="" />
+								<img src="../src/assets/imgs/fullstar.svg" alt="" />
+								<img src="../src/assets/imgs/fullstar.svg" alt="" />
+								<img src="../src/assets/imgs/fullstar.svg" alt="" />
+								<img src="../src/assets/imgs/halfstar.svg" alt="" />
+							</div>
+							<p class="text-sm">4.5/5</p>
+						</div>
+						<p class="font-bold text-2xl">$120</p>
+					</div>
+				</div>
+				<div class="w-[296px]">
+					<div class="h-[298px] w-[296px] bg-creamyGray rounded-default">
+						<img
+							src="../src/assets/imgs/test.png"
+							alt=""
+							class="w-full h-full object-cover rounded-default" />
+					</div>
+					<div class="mt-4 flex flex-col gap-2">
+						<p class="font-bold">T-shirt with Tape Details</p>
+						<div class="flex flex-row gap-[11px] items-center">
+							<div class="flex flex-row gap-[5px] h-[18px]">
+								<img src="../src/assets/imgs/fullstar.svg" alt="" />
+								<img src="../src/assets/imgs/fullstar.svg" alt="" />
+								<img src="../src/assets/imgs/fullstar.svg" alt="" />
+								<img src="../src/assets/imgs/fullstar.svg" alt="" />
+								<img src="../src/assets/imgs/halfstar.svg" alt="" />
+							</div>
+							<p class="text-sm">4.5/5</p>
+						</div>
+						<p class="font-bold text-2xl">$120</p>
+					</div>
+				</div>
+				<div class="w-[296px]">
+					<div class="h-[298px] w-[296px] bg-creamyGray rounded-default">
+						<img
+							src="../src/assets/imgs/test.png"
+							alt=""
+							class="w-full h-full object-cover rounded-default" />
+					</div>
+					<div class="mt-4 flex flex-col gap-2">
+						<p class="font-bold">T-shirt with Tape Details</p>
+						<div class="flex flex-row gap-[11px] items-center">
+							<div class="flex flex-row gap-[5px] h-[18px]">
+								<img src="../src/assets/imgs/fullstar.svg" alt="" />
+								<img src="../src/assets/imgs/fullstar.svg" alt="" />
+								<img src="../src/assets/imgs/fullstar.svg" alt="" />
+								<img src="../src/assets/imgs/fullstar.svg" alt="" />
+								<img src="../src/assets/imgs/halfstar.svg" alt="" />
+							</div>
+							<p class="text-sm">4.5/5</p>
+						</div>
+						<p class="font-bold text-2xl">$120</p>
+					</div>
+				</div>
+				<div class="w-[296px]">
+					<div class="h-[298px] w-[296px] bg-creamyGray rounded-default">
+						<img
+							src="../src/assets/imgs/test.png"
+							alt=""
+							class="w-full h-full object-cover rounded-default" />
+					</div>
+					<div class="mt-4 flex flex-col gap-2">
+						<p class="font-bold">T-shirt with Tape Details</p>
+						<div class="flex flex-row gap-[11px] items-center">
+							<div class="flex flex-row gap-[5px] h-[18px]">
+								<img src="../src/assets/imgs/fullstar.svg" alt="" />
+								<img src="../src/assets/imgs/fullstar.svg" alt="" />
+								<img src="../src/assets/imgs/fullstar.svg" alt="" />
+								<img src="../src/assets/imgs/fullstar.svg" alt="" />
+								<img src="../src/assets/imgs/halfstar.svg" alt="" />
+							</div>
+							<p class="text-sm">4.5/5</p>
+						</div>
+						<p class="font-bold text-2xl">$120</p>
+					</div>
+				</div>
+				<div class="w-[296px]">
+					<div class="h-[298px] w-[296px] bg-creamyGray rounded-default">
+						<img
+							src="../src/assets/imgs/test.png"
+							alt=""
+							class="w-full h-full object-cover rounded-default" />
+					</div>
+					<div class="mt-4 flex flex-col gap-2">
+						<p class="font-bold">T-shirt with Tape Details</p>
+						<div class="flex flex-row gap-[11px] items-center">
+							<div class="flex flex-row gap-[5px] h-[18px]">
+								<img src="../src/assets/imgs/fullstar.svg" alt="" />
+								<img src="../src/assets/imgs/fullstar.svg" alt="" />
+								<img src="../src/assets/imgs/fullstar.svg" alt="" />
+								<img src="../src/assets/imgs/fullstar.svg" alt="" />
+								<img src="../src/assets/imgs/halfstar.svg" alt="" />
+							</div>
+							<p class="text-sm">4.5/5</p>
+						</div>
+						<p class="font-bold text-2xl">$120</p>
+					</div>
+				</div>
 			</div>
 		</section>
-		<section class="pt-[70px] px-[64px] pb-[76px] bg-[#F0F0F0]">
-			<h2>BROWSE BY DRESS STYLE</h2>
-			<div>
-                <div class="dress-style" id="style1">
-                    <p></p>
-                </div>
-            </div>
+		<section class="mt-[100px]">
+			<div class="pt-[70px] rounded-default px-[64px] pb-[76px] bg-lightGray">
+				<h2>BROWSE BY DRESS STYLE</h2>
+				<div class="mt-16 flex flex-col gap-4">
+					<div
+						class="gap-5 grid grid-cols-dressStyles w-full h-dressStyleHeight">
+						<!-- Casual Style -->
+						<div
+							class="dress-style rounded-default relative overflow-hidden"
+							id="style1">
+							<p class="font-bold text-4xl absolute top-[25px] left-9">
+								Casual
+							</p>
+							<img
+								class="rounded-default w-full h-full object-cover"
+								src="../src/assets/imgs/casual.png"
+								alt="Casual Style" />
+						</div>
+
+						<!-- Formal Style -->
+						<div
+							class="dress-style rounded-default relative w-full h-full overflow-hidden"
+							id="style2">
+							<p class="font-bold text-4xl absolute top-[25px] left-9">
+								Formal
+							</p>
+							<img
+								class="rounded-default w-full h-full object-cover"
+								src="../src/assets/imgs/formal.png"
+								alt="Formal Style" />
+						</div>
+					</div>
+					<div
+						class="gap-5 grid grid-cols-dressStylesReverse w-full h-dressStyleHeight">
+						<!-- Party Style -->
+						<div
+							class="dress-style rounded-default relative w-full h-full overflow-hidden"
+							id="style2">
+							<p class="font-bold text-4xl absolute top-[25px] left-9">Party</p>
+							<img
+								class="rounded-default w-full h-full object-cover"
+								src="../src/assets/imgs/party.png"
+								alt="Formal Style" />
+						</div>
+						<!-- Gym Style -->
+						<div
+							class="dress-style rounded-default relative w-full h-full overflow-hidden"
+							id="style2">
+							<p class="font-bold text-4xl absolute top-[25px] left-9">Gym</p>
+							<img
+								class="rounded-default w-full h-full object-cover"
+								src="../src/assets/imgs/gym.png"
+								alt="Formal Style" />
+						</div>
+					</div>
+				</div>
+			</div>
 		</section>
+		<section class="flex flex-col mt-[112px]">
+			<h2>OUR HAPPY CUSTOMERS</h2>
+			<div class="mt-[42px] flex flex-col gap-10">
+				<div class="self-end flex flex-row gap-4">
+					<img src="../src/assets/imgs/arrow-left.svg" alt="" />
+					<img
+						class="rotate-180"
+						src="../src/assets/imgs/arrow-left.svg"
+						alt="" />
+				</div>
+				<!-- Container with horizontal scroll -->
+				<div
+					class="reviewSection flex flex-row gap-5 overflow-x-auto scrollbar-hidden w-full"></div>
+				<script>
+					// Select the parent element where the components will be appended
+					const reviewSection = document.querySelector(".reviewSection");
+					console.log(reviewSection);
+
+					// Define the component HTML as a string
+					function createReviewComponent(name, reviewText) {
+						const componentHTML = `
+                                <div
+                                    class="px-8 py-7 rounded-default border-solid border-1 border-black/10 flex-shrink-0 flex flex-col items-start h-[240px] w-[calc(100%/3.1)]">
+                                    <div class="flex flex-row gap-[6.5px] h-[18px]">
+                                        <img src="../src/assets/imgs/fullstar.svg" alt="" />
+                                        <img src="../src/assets/imgs/fullstar.svg" alt="" />
+                                        <img src="../src/assets/imgs/fullstar.svg" alt="" />
+                                        <img src="../src/assets/imgs/fullstar.svg" alt="" />
+                                        <img src="../src/assets/imgs/fullstar.svg" alt="" />
+                                    </div>
+                                    <div class="flex flex-row items-end gap-1 mt-[15px]">
+                                        <p class="font-bold text-[20px]">${name}</p>
+                                        <img src="../src/assets/imgs/checkMark.svg" class="w-8 h-8" alt="" />
+                                    </div>
+                                    <p class="mt-3 text-black/60">"${reviewText}”
+                                    </p>
+                                </div>
+                                `;
+						reviewSection.insertAdjacentHTML("beforeend", componentHTML);
+					}
+
+					const comments = [
+						{
+							name: "Sarah M.",
+							reviewText: `I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations.`,
+						},
+						{
+							name: "Alex K.",
+							reviewText: `As someone who's always on the lookout for unique fashion pieces, I'm thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse but also on-point with the latest trends.`,
+						},
+						{
+							name: "James L.",
+							reviewText: `Finding clothes that align with my personal style used to be a challenge until I discovered Shop.co. The range of options they offer is truly remarkable, catering to a variety of tastes and occasions.`,
+						},
+					];
+					[...comments, ...comments].forEach((comment) => {
+						createReviewComponent(comment.name, comment.reviewText);
+					});
+				</script>
+			</div>
+		</section>
+		<footer class="mt-[60px] bg-lightGray flex flex-col gap-[50px] pb-[88px]">
+			<div
+				class="py-[36px] px-16 rounded-default bg-black flex fle-row justify-between h-[180px] w-full">
+				<h2 class="text-white text-left leading-[45px]">
+					STAY UPTO DATE ABOUT <br />
+					OUR LATEST OFFERS
+				</h2>
+				<div class="flex flex-col gap-[14px] w-[350px]">
+					<div
+						class="rounded-full bg-white px-4 py-3 flex flex-row gap-3 flex-nowrap">
+						<img
+							class="flex-shrink-0 w-7 h-7"
+							src="../src/assets/imgs/email.svg"
+							alt="" />
+						<input placeholder="Enter your email address" />
+					</div>
+					<button
+						class="rounded-full bg-white px-4 py-3 font-medium text-center">
+						Subscribe to Newsletter
+					</button>
+				</div>
+			</div>
+			<div class="mt-[50px] flex flex-row justify-between">
+				<div class="flex flex-col">
+					<h3 class="logo">SHOP.CO</h3>
+					<p class="mt-[25px]">
+						We have clothes that suits your style and <br />
+						which you’re proud to wear. From <br />
+						women to men.
+					</p>
+					<div class="mt-[35px]">
+						<img src="../src/assets/imgs/Social.svg" alt="" />
+					</div>
+				</div>
+				<div class="flex flex-col gap-[26px]">
+					<h6>Company</h6>
+					<div class="flex flex-col justify-between h-full">
+						<p>About</p>
+						<p>About</p>
+						<p>About</p>
+						<p>About</p>
+					</div>
+				</div>
+				<div class="flex flex-col gap-[26px]">
+					<h6>Company</h6>
+					<div class="flex flex-col justify-between h-full">
+						<p>About</p>
+						<p>About</p>
+						<p>About</p>
+						<p>About</p>
+					</div>
+				</div>
+				<div class="flex flex-col gap-[26px]">
+					<h6>Company</h6>
+					<div class="flex flex-col justify-between h-full">
+						<p>About</p>
+						<p>About</p>
+						<p>About</p>
+						<p>About</p>
+					</div>
+				</div>
+				<div class="flex flex-col gap-[26px]">
+					<h6>Company</h6>
+					<div class="flex flex-col justify-between h-full">
+						<p>About</p>
+						<p>About</p>
+						<p>About</p>
+						<p>About</p>
+					</div>
+				</div>
+			</div>
+			<div class="flex flex-col gap-[25px]">
+				<div class="w-full h-[1px] bg-black/10"></div>
+				<div class="flex flex-row justify-between items-center">
+					<p class="">Shop.co © 2000-2023, All Rights Reserved</p>
+					<div class="flex flex-row">
+						<img src="../src/assets/imgs/visa.svg" alt="" />
+						<img src="../src/assets/imgs/mastercard.svg" alt="" />
+						<img src="../src/assets/imgs/paypal.svg" alt="" />
+						<img src="../src/assets/imgs/applepay.svg" alt="" />
+						<img src="../src/assets/imgs/googlepay.svg" alt="" />
+					</div>
+				</div>
+			</div>
+		</footer>
 	</body>
 </html>
