@@ -1,0 +1,58 @@
+@import url("https://fonts.cdnfonts.com/css/satoshi");
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span {
+	color: #000;
+    font-family: Satoshi;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+h1,h2 {
+    color: #000;
+    font-family: "Alfa Slab One";
+    font-style: normal;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 64px;
+    line-height: 64px; /* 100% */
+}
+
+h2  {
+    text-align: center;
+    font-size: 48px;
+    line-height: normal;
+}
+
+
+.logo {
+    color: #000;
+    font-family: "Alfa Slab One";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.small-info {
+    color: rgba(0, 0, 0, 0.60);
+    leading-trim: both;
+    text-edge: cap;
+    font-family: Satoshi;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px; /* 137.5% */
+}

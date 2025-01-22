@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("./fonts.css");
+
+.cover {
+    background: url('./assets/imgs/boyandgirl.jpg') #F2F0F1 714px -46.048px / 46.659% 152.049% no-repeat;
+    /* background:  #F2F0F1; */
+}
+
+.cover img {
+    height: 50%;
+    object-position: 0 70%;
+}
+
+.cover-image {
+   height: 100%;
+    height: auto;
+}
+
+
+
+@layer components {
+    .global-padding {
+        padding: 0 100px;
+    }
+}
+
+#style1.dress-style {
+    background: url("./assets/imgs/") lightgray 50% / cover no-repeat;
+}
