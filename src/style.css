@@ -4,12 +4,6 @@
 
 @import url("./fonts.css");
 
-/* .cover {
-	background: url("./assets/imgs/boyandgirl.jpg") #f2f0f1 714px -46.048px / 46.659%
-		152.049% no-repeat;
-	/* background:  #F2F0F1; */
-/* } */
-
 input:focus,
 select:focus,
 textarea:focus,
@@ -21,22 +15,15 @@ button:focus {
 	background: #f2f0f1;
 }
 
-
 .cover-image img {
 	width: 100%;
 	object-fit: cover; /* Ensure proper scaling */
 	/* object-position: 0 -100px; */
 }
 
-@layer base {
-	footer {
-		background: linear-gradient(180deg, white 90px, #f0f0f0 90px);
-	}
+footer {
+	background: linear-gradient(180deg, white 90px, #f0f0f0 90px);
 }
-
-/* #style1.dress-style {
-    background: url("./assets/imgs/casual.png") lightgray 50% / cover no-repeat;
-} */
 
 .reviewSection::-webkit-scrollbar {
 	display: none;
@@ -53,9 +40,55 @@ footer {
 	padding: 0 100px;
 }
 
+.arrival-list {
+	padding-bottom: 20px;
+}
+
+/* მობაილზე ისედაც სქროლი იბლოკები ეს მხოლოდ გამოჩნდება კომპიუტერზე --------------------------------------------------------------------- */
+
+.overflow-x-auto::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	background-color: #f5f5f5;
+	border-radius: 30px;
+}
+
+.overflow-x-auto::-webkit-scrollbar {
+	height: 5px;
+	background-color: #f5f5f5;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb {
+	background-color: #000000;
+	border-radius: 30px;
+}
+
+/* body::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	background-color: #f5f5f5;
+	border-radius: 30px;
+}
+
+body::-webkit-scrollbar {
+	height: 5px;
+	background-color: #f5f5f5;
+}
+
+body::-webkit-scrollbar-thumb {
+	background-color: #000000;
+	border-radius: 30px;
+} */
+
+/* მედია გაფართოებები --------------------------------------------------------------------- */
+
 @media screen and (max-width: 768px) {
 	section,
 	footer {
 		padding: 0 16px;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.dress-style {
+		height: 190px;
 	}
 }
