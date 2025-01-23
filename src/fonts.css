@@ -24,7 +24,8 @@ button {
 	line-height: normal;
 }
 
-p {
+p,
+a {
 	color: rgba(0, 0, 0, 0.6);
 }
 
@@ -76,19 +77,20 @@ footer h6 {
 	text-transform: uppercase;
 }
 
-@media screen and (max-width: 768px) {
-	p {
-		font-size: 14px;
-		font-style: normal;
-		font-weight: 400;
-		line-height: 20px; /* 142.857% */
+@media screen and (max-width: 1200px) {
+	h1 {
+		font-size: 48px;
 	}
-
-	header p,
-	header span {
+	.small-info {
 		font-size: 12px;
 	}
+	h3 {
+		font-size: 24px;
+		font-family: "Integral CF";
+	}
+}
 
+@media screen and (max-width: 768px) {
 	h1,
 	h2,
 	h3 {
@@ -102,32 +104,32 @@ footer h6 {
 		line-height: 34px; /* 94.444% */
 	}
 
-
-	h3 {
-		font-size: 24px;
+	h2 {
+		font-size: 32px;
 	}
 
 	h6 {
 		font-weight: 500;
 	}
 
+	p {
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 20px; /* 142.857% */
+	}
+
+	header p,
+	header span {
+		font-size: 12px;
+	}
+
+	h3 {
+		font-size: 24px;
+	}
+
 	.logo {
 		font-family: "Integral CF";
 		font-size: 28.847px;
-	}
-
-	
-}
-
-@media screen and (max-width: 1200px) {
-	h1 {
-		font-size: 48px;
-	}
-	.small-info {
-		font-size: 12px;
-	}
-	h3 {
-		font-size: 24px;
-		font-family: "Integral CF";
 	}
 }

@@ -1,67 +1,197 @@
-const arrivalList2 = document.querySelector("#arrival2.arrival-list");
-const arrivalList1 = document.querySelector("#arrival1.arrival-list");
+// check if info was read by teacher
+const infoTeacher = document.querySelector("#info-teacher");
+if (localStorage.getItem("infoReadByTeacher") !== "true") {
+	infoTeacher.classList.remove("hidden");
+	infoTeacher.classList.add("flex");
+	document.body.classList.add("overflow-y-hidden");
 
-// title, rating, price, discount = false
-function createArrivalItem(element) {
-	const arrivalItem = document.createElement("div");
-
-	arrivalItem.innerHTML = `
-												<div class="w-[200px] md:w-[296px]">
-													<div class="h-[200px] md:h-[298px] w-full bg-creamyGray rounded-default">
-														<img src="../src/assets/imgs/test.png" alt="" class="w-full h-full object-cover rounded-default" />
-													</div>
-													<div class="mt-4 flex flex-col gap-2">
-														<p class="font-bold text-black">T-shirt with Tape Details</p>
-														<div class="flex flex-row gap-[11px] items-center">
-															<div class="flex flex-row gap-[5px] h-[18px]">
-																<img src="../src/assets/imgs/fullstar.svg" alt="" />
-																<img src="../src/assets/imgs/fullstar.svg" alt="" />
-																<img src="../src/assets/imgs/fullstar.svg" alt="" />
-																<img src="../src/assets/imgs/fullstar.svg" alt="" />
-																<img src="../src/assets/imgs/halfstar.svg" alt="" />
-															</div>
-															<p class="text-sm">4.5/5</p>
-														</div>
-														<p class="font-bold text-xl md:text-2xl text-black">$120</p>
-													</div>
-												</div>
-												`;
-	element.appendChild(arrivalItem);
+	infoTeacher.querySelector("input").addEventListener("change", () => {
+		const inputStatus = infoTeacher.querySelector("input").value;
+		console.log(inputStatus === "on");
+		if (inputStatus === "on") {
+			localStorage.setItem("infoReadByTeacher", "true");
+			location.reload();
+		}
+	});
+} else {
+	console.log("Info was read by teacher");
 }
 
-createArrivalItem(arrivalList2);
-createArrivalItem(arrivalList2);
-createArrivalItem(arrivalList2);
-createArrivalItem(arrivalList2);
-createArrivalItem(arrivalList1);
-createArrivalItem(arrivalList1);
-createArrivalItem(arrivalList1);
-createArrivalItem(arrivalList1);
+// BURGER MENU
+
+document.querySelector(".burger-menu").addEventListener("click", () => {
+	document.querySelector("#search-nav").classList.toggle("active");
+});
+
+// GETTING DATA
+
+// title, rating, price,
+function createArrivalItem(item, parentElement) {
+	const arrivalItem = document.createElement("div");
+
+	// Set image source to use default image if no image is provided
+	const imgSrc = item.image || "../src/assets/imgs/test.png";
+
+	let starRatingElement = [];
+
+	for (let i = 0; i < Math.floor(item.rating.rate); i++) {
+		starRatingElement.push(
+			'<img src="../src/assets/imgs/fullstar.svg" alt="" />'
+		);
+	}
+
+	if (item.rating.rate % 1 >= 0.5) {
+		starRatingElement.push(
+			'<img src="../src/assets/imgs/halfstar.svg" alt="" />'
+		);
+	}
+
+	arrivalItem.innerHTML = `
+    <div class="w-[200px] md:w-[296px] cursor-pointer">
+      <div class="h-[200px] md:h-[298px] w-full bg-creamyGray rounded-default">
+        <img src="${imgSrc}" alt="" class="w-full h-full object-contain rounded-default" />
+      </div>
+      <div class="mt-4 flex flex-col gap-2">
+        <p class="font-bold text-black text-ellipsis text-nowrap overflow-hidden">${
+					item.title || "T-shirt with Tape Details"
+				}</p>
+        
+        <!-- Rating component -->
+        <div class="flex flex-row gap-[11px] items-center">
+          <div class="flex flex-row gap-[5px] h-[18px]">
+            ${starRatingElement.join("")}
+          </div>
+          <p class="text-sm"><span class="text-black text-sm">${
+						item.rating.rate || 0
+					}</span>/5</p>
+        </div>
+        
+        <!-- Price component -->
+        <p class="font-bold text-xl md:text-2xl text-black">${
+					item.price || 120
+				}$</p>
+      </div>
+    </div>
+  `;
+
+	arrivalItem.addEventListener("click", () => {
+		window.location.href = `/product/${item.id}`;
+	});
+
+	parentElement.appendChild(arrivalItem);
+}
+
+// FORMAT
+
+// {
+// 	id:5,
+// 	title:'...',
+// 	price:'...',
+// 	category:'...',
+// 	description:'...',
+// 	image:'...'
+// }
+
+async function fetchResults() {
+	const response = await fetch("https://fakestoreapi.com/products?limit=8");
+	const data = await response.json();
+	return data;
+}
+
+const arrivalList2 = document.querySelector("#arrival2.arrival-list");
+const arrivalList1Parent = document.querySelector("div:has(#arrival1)");
+const arrivalList1 = document.querySelector("#arrival1.arrival-list");
+
+function splitResults(results) {
+	if (results.length > 4) {
+		arrivalList1Parent.classList.remove("hidden");
+
+		results.slice(0, 4).forEach((item) => {
+			createArrivalItem(item, arrivalList1);
+		});
+		results.slice(4, results.length).forEach((item) => {
+			createArrivalItem(item, arrivalList2);
+		});
+	} else {
+		results.forEach((item) => {
+			createArrivalItem(item, arrivalList2);
+		});
+		arrivalList1Parent.classList.add("hidden");
+	}
+}
+
+let firstData = [];
+let filteredData = [];
+
+async function initialFetch() {
+	firstData = await fetchResults();
+	filteredData = firstData;
+	splitResults(firstData);
+}
+
+initialFetch();
+
+// Searching and Filtering Products
+const form = document.getElementById("searchForm");
+1;
+form.addEventListener("submit", function (event) {
+	event.preventDefault(); // Prevent the default form submission behavior
+
+	const searchBar = document.getElementById("search-bar");
+	const searchTerm = searchBar.value;
+
+	if (searchTerm.trim() === "") {
+		filteredData = firstData;
+		splitResults(filteredData);
+		return;
+	}
+	console.log("Search term:", searchTerm);
+
+	filteredData = firstData.filter((item) =>
+		item.title.toLowerCase().includes(searchTerm.toLowerCase())
+	);
+
+	arrivalList1.innerHTML = "";
+	arrivalList2.innerHTML = "";
+	console.log(filteredData);
+
+	splitResults(filteredData);
+});
 
 // Select the parent element where the components will be appended
 const reviewSection = document.querySelector(".reviewSection");
-console.log(reviewSection);
+const scrollLeft = document.querySelector("#scroll-left");
+const scrollRight = document.querySelector("#scroll-right");
 
-// Define the component HTML as a string
+scrollLeft.addEventListener("click", function () {
+	const reviewSectionWith = reviewSection.clientWidth + 20;
+	reviewSection.scrollLeft -= reviewSectionWith;
+});
+
+scrollRight.addEventListener("click", function () {
+	const reviewSectionWith = reviewSection.clientWidth + 20;
+	reviewSection.scrollLeft += reviewSectionWith;
+});
+
 function createReviewComponent(name, reviewText) {
 	const componentHTML = `
-                                <div
-                                    class="p-6 lg:px-8 lg:py-7 rounded-default border-solid border-1 border-black/10 flex-shrink-0 flex flex-col items-start w-full lg:w-[calc(100%/3.1)]">
-                                    <div class="flex flex-row gap-[6.5px] h-[18px]">
-                                        <img src="../src/assets/imgs/fullstar.svg" alt="" />
-                                        <img src="../src/assets/imgs/fullstar.svg" alt="" />
-                                        <img src="../src/assets/imgs/fullstar.svg" alt="" />
-                                        <img src="../src/assets/imgs/fullstar.svg" alt="" />
-                                        <img src="../src/assets/imgs/fullstar.svg" alt="" />
-                                    </div>
-                                    <div class="flex flex-row items-center justify-start gap-1 mt-3 lg:mt-[15px]">
-                                        <p class="font-bold text-[20px]">${name}</p>
-                                        <img src="../src/assets/imgs/checkMark.svg" class="w-7 h-7" alt="" />
-                                    </div>
-                                    <p class="mt-2 lg:mt-3 text-black/60">"${reviewText}”
-                                    </p>
-                                </div>
-                                `;
+	<div
+		class="p-6 lg:px-8 lg:py-7 rounded-default border-solid border-1 border-black/10 flex-shrink-0 flex flex-col items-start w-full lg:w-[calc(100%/3.1)]">
+		<div class="flex flex-row gap-[6.5px] h-[18px]">
+			<img src="../src/assets/imgs/fullstar.svg" alt="" />
+			<img src="../src/assets/imgs/fullstar.svg" alt="" />
+			<img src="../src/assets/imgs/fullstar.svg" alt="" />
+			<img src="../src/assets/imgs/fullstar.svg" alt="" />
+			<img src="../src/assets/imgs/fullstar.svg" alt="" />
+		</div>
+		<div class="flex flex-row items-center justify-start gap-1 mt-3 lg:mt-[15px]">
+			<p class="font-bold text-[20px]">${name}</p>
+			<img src="../src/assets/imgs/checkMark.svg" class="w-7 h-7" alt="" />
+		</div>
+		<p class="mt-2 lg:mt-3 text-black/60">"${reviewText}”
+		</p>
+	</div>
+	`;
 	reviewSection.insertAdjacentHTML("beforeend", componentHTML);
 }
 
@@ -90,8 +220,8 @@ function createInfoComponent(title, listOfLinks) {
 
 	if (listOfLinks.length === 4) {
 		infoComponent.innerHTML = `
-							<div class="flex flex-col gap-[26px]">
-								<h6>${title}</h6>
+							<div class="flex flex-col gap-4 lg:gap-[26px]">
+								<h6 class="font-medium">${title}</h6>
 								<div class="flex flex-col justify-between gap-4 h-full">
 								${listOfLinks
 									.map((link) => {

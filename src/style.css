@@ -11,6 +11,11 @@ button:focus {
 	outline: none;
 }
 
+.active {
+	height: 130px !important;
+	margin-top: 40px;
+}
+
 .cover {
 	background: #f2f0f1;
 }
@@ -90,5 +95,9 @@ body::-webkit-scrollbar-thumb {
 @media screen and (max-width: 1024px) {
 	.dress-style {
 		height: 190px;
+	}
+
+	header section {
+		padding: 0 16px;
 	}
 }

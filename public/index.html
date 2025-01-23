@@ -16,48 +16,72 @@
 
 				<p class="text-white">
 					Sign up and get 20% off to your first order.
-					<span class="underline font-medium text-white">Sign Up Now</span>
+					<a href="#" class="underline font-medium text-white">Sign Up Now</a>
 				</p>
 				<div class="invisible lg:block">
 					<img src="./../src/assets/imgs/exit.svg" alt="" />
 				</div>
 			</section>
 			<section
-				class="py-6 flex flex-row items-center justify-between gap-10 w-auto">
+				class="py-6 flex flex-row items-center flex-wrap lg:flex-nowrap justify-between lg:gap-10 order-1 w-auto">
 				<h3 class="logo">SHOP.CO</h3>
-				<div class="hidden lg:flex flex-row items-center gap-10 w-full">
+				<div
+					id="search-nav"
+					class="h-0 lg:h-auto overflow-hidden ease-in-out duration-300 transition-all flex flex-col lg:flex-row items-center gap-10 order-3 w-full">
 					<nav class="flex text-center">
 						<ul class="flex gap-6 text-nowrap">
-							<li class="flex flex-row gap-1 my-auto">
+							<li class="flex flex-row gap-1 my-auto group">
 								<a href="#">Shop</a>
-								<div class="w-4 h-4 m-auto">
+								<div class="w-4 h-4 m-auto invisible group-hover:visible">
 									<img class="" src="../src/assets/imgs/arrowDown.svg" alt="" />
 								</div>
 							</li>
-							<li class="my-auto"><a href="#">On Sale</a></li>
-							<li class="my-auto"><a href="#">New Arrivals</a></li>
-							<li class="my-auto"><a href="#">Brands</a></li>
+							<li class="flex flex-row gap-1 my-auto group">
+								<a href="#">New Arrivals</a>
+								<div class="w-4 h-4 m-auto invisible group-hover:visible">
+									<img class="" src="../src/assets/imgs/arrowDown.svg" alt="" />
+								</div>
+							</li>
+							<li class="flex flex-row gap-1 my-auto group">
+								<a href="#">On Sale</a>
+								<div class="w-4 h-4 m-auto invisible group-hover:visible">
+									<img class="" src="../src/assets/imgs/arrowDown.svg" alt="" />
+								</div>
+							</li>
+							<li class="flex flex-row gap-1 my-auto group">
+								<a href="#">Brands</a>
+								<div class="w-4 h-4 m-auto invisible group-hover:visible">
+									<img class="" src="../src/assets/imgs/arrowDown.svg" alt="" />
+								</div>
+							</li>
 						</ul>
 					</nav>
-					<div class="bg-lightGray flex flex-row gap-3 p-4 rounded-3xl w-full">
-						<div>
+					<form
+						class="bg-lightGray flex flex-row gap-3 p-4 rounded-3xl w-full order-last lg:order-none"
+						id="searchForm">
+						<button type="submit">
 							<img src="./../src/assets/imgs/search.svg" alt="" />
-						</div>
+						</button>
 						<input
 							class="bg-lightGray w-full"
 							type="text"
+							id="search-bar"
 							placeholder="Search for products..." />
-					</div>
-					<div class="flex flex-row gap-[14px] flex-shrink-0 items-center">
-						<img src="../src/assets/imgs/cart.svg" alt="" class="w-6 h-6" />
+					</form>
+					<div
+						class="lg:flex flex-row gap-[14px] flex-shrink-0 items-center hidden">
+						<img
+							src="../src/assets/imgs/cart.svg"
+							alt=""
+							class="w-6 h-6 cursor-pointer" />
 
 						<img
 							src="../src/assets/imgs/profile.svg"
 							alt=""
-							class="w-6 h-6 flex-shrink-0" />
+							class="w-6 h-6 flex-shrink-0 cursor-pointer" />
 					</div>
 				</div>
-				<div class="lg:hidden">
+				<div class="burger-menu lg:hidden hover:cursor-pointer order-2">
 					<img src="../src/assets/imgs/burger.svg" alt="" />
 				</div>
 			</section>
@@ -105,7 +129,13 @@
 						</div>
 					</div>
 				</div>
-				<div class="cover-image max-w-3xl flex items-end overflow-hidden">
+				<div class="cover-image max-w-3xl flex items-end overflow-hidden relative">
+					<div class="lg:w-[100px] w-[75px] h-[75px] lg:h-[100px] absolute top-10 right-0">
+						<img src="../src/assets/imgs/star.svg" alt="">
+					</div>
+					<div class="lg:w-[56px] lg:h-[56px] w-11 h-11 absolute top-1/2">
+						<img src="../src/assets/imgs/star.svg"  alt="">
+					</div>
 					<img class="" src="../src/assets/imgs/boyandgirl.jpg" alt="" />
 				</div>
 			</div>
@@ -139,14 +169,13 @@
 				<div
 					id="arrival1"
 					class="arrival-list mt-[51px] flex flex-row overflow-x-auto flex-nowrap gap-x-[20px]">
-					<!-- IMPORT OF CLOTHES -->
+					<!-- IMPORT OF PRODUCTS HERE  -->
 				</div>
 				<div class="md:hidden mt-6 flex flex-col gap-10">
 					<button class="py-4 w-full border rounded-full border-black/10">
 						View All
 					</button>
-					<div class="w-full h-[1px] bg-black/10">
-					</div>
+					<div class="w-full h-[1px] bg-black/10"></div>
 				</div>
 			</div>
 			<div class="mt-10 md:mt-[68px] flex flex-col xl:items-center">
@@ -170,7 +199,7 @@
 						class="gap-5 flex flex-col lg:grid grid-cols-dressStyles w-full lg:h-dressStyleHeight">
 						<!-- Casual Style -->
 						<div
-							class="dress-style rounded-default relative overflow-hidden"
+							class="dress-style cursor-pointer rounded-default relative overflow-hidden"
 							id="style1">
 							<p
 								class="font-bold text-2xl lg:text-4xl absolute top-4 lg:top-[25px] left-6 lg:left-9">
@@ -184,7 +213,7 @@
 
 						<!-- Formal Style -->
 						<div
-							class="dress-style rounded-default relative w-full h-full overflow-hidden"
+							class="dress-style cursor-pointer rounded-default relative w-full h-full overflow-hidden"
 							id="style2">
 							<p
 								class="font-bold text-2xl lg:text-4xl absolute top-4 lg:top-[25px] left-6 lg:left-9">
@@ -200,7 +229,7 @@
 						class="gap-5 flex flex-col lg:grid grid-cols-dressStylesReverse w-full lg:h-dressStyleHeight">
 						<!-- Party Style -->
 						<div
-							class="dress-style rounded-default relative w-full h-full overflow-hidden"
+							class="dress-style cursor-pointer rounded-default relative w-full h-full overflow-hidden"
 							id="style2">
 							<p
 								class="font-bold text-2xl lg:text-4xl absolute top-4 lg:top-[25px] left-6 lg:left-9">
@@ -213,7 +242,7 @@
 						</div>
 						<!-- Gym Style -->
 						<div
-							class="dress-style rounded-default relative w-full h-full overflow-hidden"
+							class="dress-style cursor-pointer rounded-default relative w-full h-full overflow-hidden"
 							id="style2">
 							<p
 								class="font-bold text-2xl lg:text-4xl absolute top-4 lg:top-[25px] left-6 lg:left-9">
@@ -230,28 +259,35 @@
 		</section>
 		<section class="flex flex-col mt-[50px] md:mt-[112px]">
 			<div class="flex flex-row lg:flex-col justify-between">
-				<h2 class="text-left">OUR HAPPY CUSTOMERS</h2>
+				<h2 class="text-left">
+					OUR HAPPY <br class="lg:hidden" />
+					CUSTOMERS
+				</h2>
 				<div class="self-end flex flex-row gap-4 lg:mt-[43px]">
-					<img src="../src/assets/imgs/arrow-left.svg" alt="" />
+					<img
+						src="../src/assets/imgs/arrow-left.svg"
+						alt=""
+						id="scroll-left" />
 					<img
 						class="rotate-180"
+						id="scroll-right"
 						src="../src/assets/imgs/arrow-left.svg"
 						alt="" />
 				</div>
 			</div>
 			<div class="mt-10 flex flex-col gap-10">
-				<!-- Container with horizontal scroll -->
+				<!-- Container for Comments below -->
 				<div
-					class="reviewSection flex flex-row gap-5 lg:min-h-[240px] overflow-x-auto scrollbar-hidden w-full"></div>
+					class="reviewSection flex flex-row gap-5 lg:min-h-[240px] overflow-x-auto scrollbar-hidden w-full scroll-smooth transition-all"></div>
 			</div>
 		</section>
 		<footer class="mt-[60px] bg-lightGray flex flex-col pb-[88px]">
 			<div
-				class="lg:py-[36px] px-6 lg:px-16 pt-8 pb-7 rounded-default gap-8 bg-black flex flex-col lg:flex-row justify-between lg:h-[180px] w-full">
-				<h2 class="text-white text-left leading-[45px]">
+				class="xl:py-[36px] px-6 xl:px-16 pt-8 pb-7 rounded-default gap-8 bg-black flex flex-col xl:flex-row justify-between xl:h-[180px] w-full">
+				<h2 class="text-white text-left leading-[45px] max-w-[660px]">
 					STAY UPTO DATE ABOUT OUR LATEST OFFERS
 				</h2>
-				<div class="flex flex-col gap-[14px] lg:w-[350px]">
+				<div class="flex flex-col gap-[14px] xl:w-[350px]">
 					<div
 						class="rounded-full bg-white px-4 py-3 flex flex-row gap-3 flex-nowrap">
 						<img
@@ -267,8 +303,9 @@
 				</div>
 			</div>
 			<div
-				class="info-footer mt-8 lg:mt-[50px] grid grid-cols-2 gap-6 lg:flex lg:flex-row lg:justify-between">
-				<div class="flex flex-col col-span-2 mb-6 lg:mb-0 w-full">
+				class="info-footer mt-8 lg:mt-[50px] grid grid-cols-2 gap-6 lg:flex lg:flex-row justify-between">
+				<div
+					class="flex flex-col col-span-2 max-lg:mb-6 max-lg:w-full lg:max-w-[250px]">
 					<h3 class="logo">SHOP.CO</h3>
 					<p class="mt-[14px] lg:mt-[25px]">
 						We have clothes that suits your style and which you’re proud to
@@ -279,7 +316,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="flex flex-col gap-[25px] mt-10 lg:mt-0">
+			<div class="flex flex-col gap-[25px] mt-10">
 				<div class="w-full h-[1px] bg-black/10"></div>
 				<div
 					class="flex flex-col gap-4 lg:flex-row justify-between items-center">
@@ -294,6 +331,29 @@
 				</div>
 			</div>
 		</footer>
+		<div
+			class="h-dvh w-screen z-10 absolute top-0 left-0 bg-white bg-opacity-90 flex-col items-center justify-center hidden"
+			id="info-teacher"
+			>
+			<div class="flex flex-col gap-10 max-w-3xl">
+				<h3 class="text-red-500">ინფო ლექტორისთვის:</h3>
+				<p class="text-lg text-black font-bold ">
+					სქროლ ბარი მხოლოდ იმიტომ გამოვაჩინე პროდუქტებზე, რომ კომპიუტერზე
+					შესაძლებელი იყოს მისი გამოძრავება
+				</p>
+				<p class="text-lg text-black font-bold">
+					მოცემულობიდან გამომდინარე api-დან მომაქვს მხოლოდ 8 მონაცემი ფილტრაცია
+					ხდება ლოკალურად 8 წამოღებულ მონაცემზე, რადგან api არ გააჩნია ფილტრაცია
+					სხვა შემთხვევაში ცუდი api გამო წამოვიღებდი ყველა პროდუქტს და შემდგომ
+					ვაჩვენებდი მხოლოდ 8 მონაცემს 20 მონაცემიდან და მაგ 20 მონაცემს გავფილტრავდი,
+					მაგრამ ეს პირობას ეწინააღმდეგება იმედია ქულა არ დამაკლდება
+				</p>
+				<div>
+					<input type="checkbox" id="spare-student"> 
+					<label for="spare-student"><--- წავიკითხე ინფო და მეტჯერ აღარ მაჩვენო</label>
+				</div>
+			</div>
+		</div>
 		<script src="../src/script.js"></script>
 	</body>
 </html>
