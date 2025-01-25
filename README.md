@@ -1,7 +1,5 @@
 # Frontend Final Task
 
-# Frontend Final Task
-
 A modern e-commerce website built on HTML5, CSS3, and JavaScript. Utilizing Tailwind CSS for a responsive design ensures an optimal user experience across various devices.
 
 ## **Project Description**
