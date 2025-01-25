@@ -1231,6 +1231,12 @@ button:focus {
   outline: none;
 }
 
+img {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
 .active {
   height: 130px !important;
   margin-top: 40px;
@@ -1310,7 +1316,7 @@ body::-webkit-scrollbar-thumb {
 
 @media screen and (max-width: 768px) {
   section,
-	footer {
+  footer {
     padding: 0 16px;
   }
 }
