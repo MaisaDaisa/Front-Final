@@ -594,6 +594,14 @@ video {
   top: 1rem;
 }
 
+.left-3 {
+  left: 0.75rem;
+}
+
+.right-4 {
+  right: 1rem;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -1575,6 +1583,10 @@ body::-webkit-scrollbar-thumb {
 
   .lg\:pt-\[70px\] {
     padding-top: 70px;
+  }
+
+  .lg\:pt-\[44px\] {
+    padding-top: 44px;
   }
 
   .lg\:text-4xl {
