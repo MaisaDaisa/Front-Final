@@ -30,8 +30,8 @@
 				<div
 					id="search-nav"
 					class="order-3 flex h-0 w-full flex-col items-center gap-10 overflow-hidden transition-all duration-300 ease-in-out lg:h-auto lg:flex-row">
-					<nav class="flex text-center">
-						<ul class="flex gap-6 text-nowrap">
+					<nav class="flex max-lg:w-full text-center">
+						<ul class="flex max-lg:w-full max-lg:justify-around lg:gap-6 text-nowrap">
 							<li class="group my-auto flex flex-row gap-1">
 								<a href="#">Shop</a>
 								<div
@@ -287,7 +287,7 @@
 			</div>
 		</section>
 		<section class="mt-[50px] flex flex-col md:mt-[112px]">
-			<div class="flex flex-row justify-between lg:flex-col">
+			<div class="flex flex-row justify-between lg:flex-col flex-wrap gap-y-4 ">
 				<h2 class="text-left">
 					OUR HAPPY <br class="lg:hidden" />
 					CUSTOMERS
@@ -319,12 +319,12 @@
 				</h2>
 				<div class="flex flex-col gap-[14px] xl:w-[350px]">
 					<div
-						class="flex flex-row flex-nowrap gap-3 rounded-full bg-white px-4 py-3">
+						class="flex flex-row flex-nowrap gap-3 rounded-full bg-white px-4 py-3 overflow-x-hidden">
 						<img
 							class="h-7 w-7 flex-shrink-0"
 							src="../src/assets/imgs/email.svg"
 							alt="" />
-						<input placeholder="Enter your email address" />
+						<input placeholder="Enter your email address " class="text-ellipsis" />
 					</div>
 					<button
 						class="rounded-full bg-white px-4 py-3 text-center font-medium">
@@ -351,7 +351,7 @@
 				<div
 					class="flex flex-col items-center justify-between gap-4 lg:flex-row">
 					<p class="">Shop.co © 2000-2023, All Rights Reserved</p>
-					<div class="flex flex-row">
+					<div class="flex flex-row overflow-x-hidden">
 						<img src="../src/assets/imgs/visa.svg" alt="" />
 						<img src="../src/assets/imgs/mastercard.svg" alt="" />
 						<img src="../src/assets/imgs/paypal.svg" alt="" />

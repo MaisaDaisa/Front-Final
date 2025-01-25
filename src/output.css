@@ -955,12 +955,20 @@ video {
   row-gap: 14px;
 }
 
+.gap-y-4 {
+  row-gap: 1rem;
+}
+
 .self-end {
   align-self: flex-end;
 }
 
 .self-center {
   align-self: center;
+}
+
+.justify-self-end {
+  justify-self: end;
 }
 
 .overflow-hidden {
@@ -971,8 +979,16 @@ video {
   overflow-x: auto;
 }
 
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
+
 .overflow-y-hidden {
   overflow-y: hidden;
+}
+
+.overflow-x-clip {
+  overflow-x: clip;
 }
 
 .scroll-smooth {
@@ -1347,6 +1363,14 @@ body::-webkit-scrollbar-thumb {
   .max-lg\:w-full {
     width: 100%;
   }
+
+  .max-lg\:justify-between {
+    justify-content: space-between;
+  }
+
+  .max-lg\:justify-around {
+    justify-content: space-around;
+  }
 }
 
 @media (min-width: 768px) {
@@ -1498,6 +1522,10 @@ body::-webkit-scrollbar-thumb {
     width: calc(100% / 3.1);
   }
 
+  .lg\:w-auto {
+    width: auto;
+  }
+
   .lg\:max-w-\[250px\] {
     max-width: 250px;
   }
@@ -1520,6 +1548,10 @@ body::-webkit-scrollbar-thumb {
 
   .lg\:gap-\[26px\] {
     gap: 26px;
+  }
+
+  .lg\:gap-6 {
+    gap: 1.5rem;
   }
 
   .lg\:px-8 {
